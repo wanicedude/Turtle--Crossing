@@ -35,6 +35,10 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(player) < 20:
             game_is_on = False
+    
+    # Detect when turtle as reached the top of the screen and go back to starting position
+    if player.ycor() == 300:
+        player.goto((0, -280))
 
 
 screen.exitonclick()
