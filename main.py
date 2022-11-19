@@ -13,7 +13,7 @@ screen.listen()
 
 # cart = []
 player = Player()
-car = CarManager()
+car_manager = CarManager()
    
 
 screen.onkey(player.move, "Up")
@@ -28,9 +28,13 @@ while game_is_on:
     
     time.sleep(0.1)
     screen.update()
-    car.move_car()
-    car.create()
+    car_manager.move_car()
+    car_manager.create()
     
+    #Detect  collision cars
+    for car in car_manager.all_cars:
+        if car.distance(player) < 20:
+            game_is_on = False
 
 
 screen.exitonclick()
