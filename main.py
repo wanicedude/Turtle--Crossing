@@ -39,6 +39,8 @@ while game_is_on:
     # Detect when turtle as reached the top of the screen and go back to starting position
     if player.ycor() == 300:
         player.goto((0, -280))
+        car_manager.increase_speed()
+        
 
 
 screen.exitonclick()

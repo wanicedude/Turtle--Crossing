@@ -5,6 +5,7 @@ MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
 
 
+
 class Player(Turtle):
     def __init__(self):
         super().__init__()
@@ -16,5 +17,10 @@ class Player(Turtle):
         self.move()
         
         
+        
     def move(self):
+        global MOVE_INCREMENT
         self.forward(MOVE_DISTANCE)
+        
+        
+        
